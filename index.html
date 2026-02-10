@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>McDonald's - Login</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍔</text></svg>">
+</head>
+<body>
+    <div class="login-container">
+        <div class="brand-header">
+            <div class="logo">
+                <i class="fas fa-hamburger"></i>
+                <h1>McDonald's</h1>
+            </div>
+            <p class="tagline">I'm lovin' it</p>
+        </div>
+        
+        <div class="login-form">
+            <h2>Welcome Back!</h2>
+            <p>Please login to order your favorite McDonald's meals</p>
+            
+            <form id="loginForm">
+                <div class="input-group">
+                    <label for="username"><i class="fas fa-user"></i> Username</label>
+                    <input type="text" id="username" placeholder="Enter username (admin)" required>
+                </div>
+                
+                <div class="input-group">
+                    <label for="password"><i class="fas fa-lock"></i> Password</label>
+                    <input type="password" id="password" placeholder="Enter password (1234)" required>
+                </div>
+                
+                <button type="submit" class="login-btn" id="loginBtn">
+                    <span>Login</span>
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </form>
+            
+            <div id="messageArea" class="message-area"></div>
+            
+            <div class="login-hint">
+                <p><strong>Demo credentials:</strong> username: <code>admin</code>, password: <code>1234</code></p>
+                <p>Or use any username/password combination</p>
+            </div>
+        </div>
+        
+        <div class="login-footer">
+            <p>© 2025 McDonald's. All rights reserved.</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

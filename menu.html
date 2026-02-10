@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>McDonald's - Menu</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!--<link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍔</text></svg>">-->
+</head>
+<body>
+    <div class="menu-container">
+        <!-- Header -->
+        <header class="menu-header">
+            <div class="logo">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/McDonald%27s_Golden_Arches.svg/2339px-McDonald%27s_Golden_Arches.svg.png" alt="McDonald's Logo" class="brand-logo">
+                <h1>Welcome to McDonald's!</h1>
+            </div>
+            <div class="user-info">
+                <span id="usernameDisplay">Guest</span>
+                <button class="logout-btn" id="logoutBtn">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </button>
+            </div>
+        </header>
+        
+        <!-- Special Offers Section -->
+        <div class="special-offers">
+            <h2><i class="fas fa-star"></i> Special Offers</h2>
+            <div class="discount-section">
+                <h3>Apply Discount Code</h3>
+                <div class="discount-input">
+                    <input type="text" id="discountCode" placeholder="Enter discount code (MCD50)">
+                    <button id="applyDiscountBtn">Apply Discount</button>
+                </div>
+                <p class="discount-hint">Try code: <strong>MCD50</strong> for 50% off!</p>
+            </div>
+            
+            <div class="suggested-meal">
+                <h3 id="suggestionTitle">Today's Special Combo</h3>
+                <p id="suggestedMealText">Click below for a random meal suggestion!</p>
+                <button id="suggestMealBtn" class="suggest-btn">
+                    <i class="fas fa-random"></i> Suggest a Meal
+                </button>
+            </div>
+        </div>
+        
+        <!-- Menu Section with Images Already in HTML -->
+        <section class="menu-section">
+            <h2><i class="fas fa-utensils"></i> Our Menu</h2>
+            <p class="menu-subtitle">Click "Add to Cart" to select your favorite items</p>
+            
+            <div class="menu-grid" id="menuGrid">
+                <!-- Menu items are hardcoded in HTML -->
+                <div class="menu-item" data-id="1" data-price="49.99">
+                    <div class="menu-item-img">
+                        <img src="assets/images/big-mac2.webp" alt="Big Mac">
+                    </div>
+                    <div class="menu-item-content">
+                        <h3>Big Mac</h3>
+                        <div class="menu-item-price">R 49.99</div>
+                        <button class="add-to-cart-btn" data-id="1" data-name="Big Mac" data-price="49.99">
+                            <i class="fas fa-cart-plus"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="menu-item" data-id="2" data-price="55.99">
+                    <div class="menu-item-img">
+                        <img src="assets/images/quarter-pounder.webp" alt="Quarter Pounder">
+                    </div>
+                    <div class="menu-item-content">
+                        <h3>Quarter Pounder</h3>
+                        <div class="menu-item-price">R 55.99</div>
+                        <button class="add-to-cart-btn" data-id="2" data-name="Quarter Pounder" data-price="55.99">
+                            <i class="fas fa-cart-plus"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="menu-item special" data-id="3" data-price="39.99">
+                    <div class="menu-item-img">
+                        <img src="assets/images/mcChicken.webp" alt="McChicken">
+                    </div>
+                    <div class="menu-item-content">
+                        <h3>McChicken</h3>
+                        <div class="menu-item-price">R 39.99</div>
+                        <button class="add-to-cart-btn" data-id="3" data-name="McChicken" data-price="39.99">
+                            <i class="fas fa-cart-plus"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="menu-item" data-id="4" data-price="41.99">
+                    <div class="menu-item-img">
+                        <img src="assets/images/filet-o-fish.webp" alt="Filet-O-Fish">
+                    </div>
+                    <div class="menu-item-content">
+                        <h3>Filet-O-Fish</h3>
+                        <div class="menu-item-price">R 41.99</div>
+                        <button class="add-to-cart-btn" data-id="4" data-name="Filet-O-Fish" data-price="41.99">
+                            <i class="fas fa-cart-plus"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="menu-item special" data-id="5" data-price="32.99">
+                    <div class="menu-item-img">
+                        <img src="assets/images/nuggets.webp" alt="Chicken McNuggets">
+                    </div>
+                    <div class="menu-item-content">
+                        <h3>Chicken McNuggets (6pc)</h3>
+                        <div class="menu-item-price">R 32.99</div>
+                        <button class="add-to-cart-btn" data-id="5" data-name="Chicken McNuggets (6pc)" data-price="32.99">
+                            <i class="fas fa-cart-plus"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="menu-item special" data-id="6" data-price="24.99">
+                    <div class="menu-item-img">
+                        <img src="assets/images/Fries.webp" alt="French Fries">
+                    </div>
+                    <div class="menu-item-content">
+                        <h3>French Fries</h3>
+                        <div class="menu-item-price">R 24.99</div>
+                        <button class="add-to-cart-btn" data-id="6" data-name="French Fries" data-price="24.99">
+                            <i class="fas fa-cart-plus"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="menu-item special" data-id="7" data-price="28.99">
+                    <div class="menu-item-img">
+                        <img src="assets/images/cheeseburger.webp" alt="Cheeseburger">
+                    </div>
+                    <div class="menu-item-content">
+                        <h3>Cheeseburger</h3>
+                        <div class="menu-item-price">R 28.99</div>
+                        <button class="add-to-cart-btn" data-id="7" data-name="Cheeseburger" data-price="28.99">
+                            <i class="fas fa-cart-plus"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="menu-item" data-id="8" data-price="18.99">
+                    <div class="menu-item-img">
+                        <img src="assets/images/coke.webp" alt="Coca-Cola">
+                    </div>
+                    <div class="menu-item-content">
+                        <h3>Coca-Cola</h3>
+                        <div class="menu-item-price">R 18.99</div>
+                        <button class="add-to-cart-btn" data-id="8" data-name="Coca-Cola" data-price="18.99">
+                            <i class="fas fa-cart-plus"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="menu-item" data-id="9" data-price="29.99">
+                    <div class="menu-item-img">
+                        <img src="assets/images/oreo_mcFlurry.webp" alt="McFlurry Oreo">
+                    </div>
+                    <div class="menu-item-content">
+                        <h3>McFlurry Oreo</h3>
+                        <div class="menu-item-price">R 29.99</div>
+                        <button class="add-to-cart-btn" data-id="9" data-name="McFlurry Oreo" data-price="29.99">
+                            <i class="fas fa-cart-plus"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="menu-item special" data-id="10" data-price="14.99">
+                    <div class="menu-item-img">
+                        <img src="assets/images/apple-pie.webp" alt="Apple Pie">
+                    </div>
+                    <div class="menu-item-content">
+                        <h3>Apple Pie</h3>
+                        <div class="menu-item-price">R 14.99</div>
+                        <button class="add-to-cart-btn" data-id="10" data-name="Apple Pie" data-price="14.99">
+                            <i class="fas fa-cart-plus"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="menu-item" data-id="11" data-price="45.99">
+                    <div class="menu-item-img">
+                        <img src="assets/images/happy_meal.webp" alt="Happy Meal">
+                    </div>
+                    <div class="menu-item-content">
+                        <h3>Happy Meal</h3>
+                        <div class="menu-item-price">R 45.99</div>
+                        <button class="add-to-cart-btn" data-id="11" data-name="Happy Meal" data-price="45.99">
+                            <i class="fas fa-cart-plus"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="menu-item special" data-id="12" data-price="36.99">
+                    <div class="menu-item-img">
+                        <img src="assets/images/chicken-burger.webp" alt="Chicken Burger">
+                    </div>
+                    <div class="menu-item-content">
+                        <h3>Chicken Burger</h3>
+                        <div class="menu-item-price">R 36.99</div>
+                        <button class="add-to-cart-btn" data-id="12" data-name="Chicken Burger" data-price="36.99">
+                            <i class="fas fa-cart-plus"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Cart Section -->
+        <section class="cart-section">
+            <h2><i class="fas fa-shopping-cart"></i> Your Order</h2>
+            
+            <div class="cart-items" id="cartItems">
+                <div class="empty-cart">
+                    <i class="fas fa-shopping-basket"></i>
+                    <p>Your cart is empty</p>
+                    <p>Add items from the menu above</p>
+                </div>
+            </div>
+            
+            <div class="cart-summary">
+                <div class="summary-row">
+                    <span>Subtotal:</span>
+                    <span id="subtotal">R 0.00</span>
+                </div>
+                <div class="summary-row">
+                    <span>Discount:</span>
+                    <span id="discountAmount">R 0.00</span>
+                </div>
+                <div class="summary-row total">
+                    <span>Total:</span>
+                    <span id="totalPrice">R 0.00</span>
+                </div>
+                
+                <button id="confirmOrderBtn" class="confirm-btn" disabled>
+                    <i class="fas fa-check-circle"></i> Confirm Order
+                </button>
+            </div>
+        </section>
+        
+        <!-- Order Confirmation Message Area -->
+        <div id="orderMessage" class="order-message"></div>
+        
+        <footer class="menu-footer">
+            <p>© 2025 McDonald's. Prices are in South African Rands (R). All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
